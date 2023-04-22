@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useHistory } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db, auth, collection, getDocs, query, where } from 'src/firebaseConfigFile';
 import {
@@ -29,7 +29,6 @@ import { useLeadData } from 'src/contexts/leadDataContext';
 
 const ActiveLeads = () => {
   const [leads, setLeads] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,9 +51,11 @@ const ActiveLeads = () => {
     fetchData();
   }, []);
 
-  const handleLeadClick = (leadId) => {
-    navigate(`/current-lead/${leadId}`);
+  const navigate = useNavigate();
+  const handleClick = (lead) => {
+    navigate(`/leads/${lead.id}`, { state: { leadData: lead } });
   };
+
   return (
     <div>
       <CCard className="mb-4">
@@ -73,7 +74,7 @@ const ActiveLeads = () => {
                 {formatDate(lead['DET-007-Appointment Time'])} - {formatTimestamp(lead['DET-007-Appointment Time'])}<br />
               </CCardText>
               <div className="center-container">
-              <CButton style={{ width: "80%" }} onClick={() => handleLeadClick(lead.id)}>Edit Lead - {lead['DET-001-Lead ID']}</CButton>
+              <CButton style={{ width: "80%" }} onClick={() => handleClick(lead.id)}>Edit Lead - {lead['DET-001-Lead ID']}</CButton>
               </div>
             </CCardBody>
           </CCard>
