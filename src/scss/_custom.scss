@@ -1,0 +1,79 @@
+// Here you can add other styles
+// Container styles
+.react-datetime-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  // Input styles
+  .react-datetime-picker__inputGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .react-datetime-picker__inputGroup__input {
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  // Calendar button styles
+  .react-datetime-picker__calendar-button {
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  // Clear button styles
+  .react-datetime-picker__clear-button {
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  // Calendar popup styles
+  .react-calendar {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .react-calendar__tile {
+    font-size: 14px;
+  }
+  
+
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; /* or any desired height */
+  }
+
+  .lead-list {
+    max-width: 50%;
+  }
